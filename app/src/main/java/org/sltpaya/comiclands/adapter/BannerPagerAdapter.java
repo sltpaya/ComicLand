@@ -48,13 +48,11 @@ public class BannerPagerAdapter extends PagerAdapter {
                 .error(R.drawable.loading_bookrack).into(img);
 
         container.addView(item);
-        System.out.println("视图被创建");
         return item;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        System.out.println("视图被销毁");
 //        container.removeView((View) object);
     }
 

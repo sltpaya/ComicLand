@@ -21,7 +21,7 @@ import java.util.List;
  * Author: SLTPAYA
  * Date: 2017/2/13
  */
-public class RecommendAdapter extends RecyclerView.Adapter {
+public class RecommendAdapter extends TabAdapter<RecommendEntry> {
 
     private final String TAG = "RecommendAdapter";
     private boolean DEBUG = true;
@@ -45,6 +45,7 @@ public class RecommendAdapter extends RecyclerView.Adapter {
      *
      * @param entry RecommendEntry
      */
+    @Override
     public void notifyDataChanged(RecommendEntry entry) {
         if (entry != null) {
             this.info = entry.getInfo();

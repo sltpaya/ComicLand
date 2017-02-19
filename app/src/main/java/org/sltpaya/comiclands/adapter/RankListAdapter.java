@@ -17,7 +17,7 @@ import java.util.List;
  * Author: SLTPAYA
  * Date: 2017/2/17
  */
-public class RankListAdapter extends RecyclerView.Adapter {
+public class RankListAdapter extends TabAdapter<RankListEntry> {
 
     private LayoutInflater mInflater;
     private List<RankListEntry.Special> special;
@@ -33,6 +33,7 @@ public class RankListAdapter extends RecyclerView.Adapter {
      * 通知数据改变
      * @param entry RecommendEntry
      */
+    @Override
     public void notifyDataChanged(RankListEntry entry) {
         if (entry != null) {
             this.special = entry.getInfo().getSpecials();

@@ -16,19 +16,16 @@ import org.sltpaya.comiclands.holder.FragmentRecyclerHolder;
  */
 public class FragmentRecyclerAdapter extends RecyclerView.Adapter{
 
-//    private Context mContext;
     private LayoutInflater mInflater;
 
-    public FragmentRecyclerAdapter(Context mContext) {
-//        this.mContext = mContext;
-        this.mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public FragmentRecyclerAdapter(Context context) {
+        this.mInflater = LayoutInflater.from(context);
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflate = mInflater.inflate(R.layout.recycler_item, parent, false);
-        FragmentRecyclerHolder holder = new FragmentRecyclerHolder(inflate);
-        return holder;
+        return new FragmentRecyclerHolder(inflate);
     }
 
     @Override

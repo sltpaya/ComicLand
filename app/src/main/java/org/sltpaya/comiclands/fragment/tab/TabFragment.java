@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.fragment;
+package org.sltpaya.comiclands.fragment.tab;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -17,7 +17,7 @@ import org.sltpaya.comiclands.adapter.FragmentRecyclerAdapter;
  * Author: SLTPAYA
  * Date: 2017/2/11
  */
-public class BaseTabFragment extends Fragment {
+public class TabFragment extends Fragment {
 
     @LayoutRes
     private int mLayoutId;

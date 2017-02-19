@@ -16,7 +16,7 @@ import java.util.List;
  * Date: 2017/2/18
  */
 //TODO:没有解决轮播图的问题，打算设置头布局来实现
-public class BookListAdapter extends RecyclerView.Adapter {
+public class BookListAdapter extends TabAdapter<BookListEntry> {
 
     private final int BANNER_TYPE = 1;
     private final int NORMAL_TYPE = 2;
@@ -32,6 +32,7 @@ public class BookListAdapter extends RecyclerView.Adapter {
      *
      * @param entry RecommendEntry
      */
+    @Override
     public void notifyDataChanged(BookListEntry entry) {
         if (entry != null) {
             this.special = entry.getInfo().getSpecials();

@@ -1,18 +1,15 @@
 package org.sltpaya.comiclands.fragment.main;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.adapter.BaseFragmentPagerAdapter;
-import org.sltpaya.comiclands.fragment.BaseTabFragment;
+import org.sltpaya.comiclands.fragment.tab.TabFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,9 +46,9 @@ public class LastestComicFragment extends BaseFragment {
         String[] titles = handleWeekTitle();
         ArrayList<Fragment> fragments = new ArrayList<>();
         for (String title : titles) {
-            BaseTabFragment fragment = new BaseTabFragment();
+            TabFragment fragment = new TabFragment();
             Bundle args = new Bundle();
-            args.putInt(BaseTabFragment.LAYOUT_ID, R.layout.layout_recycler);
+            args.putInt(TabFragment.LAYOUT_ID, R.layout.layout_recycler);
             fragment.setArguments(args);
             fragments.add(fragment);
         }

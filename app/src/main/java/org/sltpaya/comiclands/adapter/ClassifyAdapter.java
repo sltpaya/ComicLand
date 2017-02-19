@@ -18,7 +18,7 @@ import static android.R.string.no;
  * Author: SLTPAYA
  * Date: 2017/2/18
  */
-public class ClassifyAdapter extends RecyclerView.Adapter<ClassifyHolder> {
+public class ClassifyAdapter extends TabAdapter<ClassifyEntry> {
 
     private final LayoutInflater mInflater;
     private List<ClassifyEntry.Adlistjson> adlistjson;
@@ -27,6 +27,7 @@ public class ClassifyAdapter extends RecyclerView.Adapter<ClassifyHolder> {
         mInflater = LayoutInflater.from(context);
     }
 
+    @Override
     public void notifyDataChanged(ClassifyEntry entry) {
         if (entry.getCode() == 200) {
             adlistjson = entry.getInfo().getAdlistjson();
@@ -41,8 +42,8 @@ public class ClassifyAdapter extends RecyclerView.Adapter<ClassifyHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ClassifyHolder holder, int position) {
-        holder.setData(adlistjson.get(position));
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        ((ClassifyHolder)holder).setData(adlistjson.get(position));
     }
 
     @Override

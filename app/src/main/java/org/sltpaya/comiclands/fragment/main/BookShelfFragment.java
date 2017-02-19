@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.adapter.BaseFragmentPagerAdapter;
-import org.sltpaya.comiclands.fragment.BaseTabFragment;
+import org.sltpaya.comiclands.fragment.tab.TabFragment;
 
 import java.util.ArrayList;
 
@@ -45,9 +45,9 @@ public class BookShelfFragment extends BaseFragment {
         String[] titles = getTabTitles(R.array.BOOK_SHELF_TAB_TITLE);
         ArrayList<Fragment> fragments = new ArrayList<>();
         for (String title : titles) {
-            BaseTabFragment fragment = new BaseTabFragment();
+            TabFragment fragment = new TabFragment();
             Bundle args = new Bundle();
-            args.putInt(BaseTabFragment.LAYOUT_ID, R.layout.layout_recycler);
+            args.putInt(TabFragment.LAYOUT_ID, R.layout.layout_recycler);
             fragment.setArguments(args);
             fragments.add(fragment);
         }

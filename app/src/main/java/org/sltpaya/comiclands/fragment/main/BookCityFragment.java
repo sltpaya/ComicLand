@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Toast;
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.adapter.BaseFragmentPagerAdapter;
-import org.sltpaya.comiclands.fragment.BookListTabFragment;
-import org.sltpaya.comiclands.fragment.ClassifyTabFragment;
-import org.sltpaya.comiclands.fragment.RankListTabFragment;
-import org.sltpaya.comiclands.fragment.RecommendTabFragment;
-import org.sltpaya.comiclands.fragment.VideoTabFragment;
+import org.sltpaya.comiclands.fragment.tab.BookListTabFragment;
+import org.sltpaya.comiclands.fragment.tab.ClassifyTabFragment;
+import org.sltpaya.comiclands.fragment.tab.RankListTabFragment;
+import org.sltpaya.comiclands.fragment.tab.RecommendTabFragment;
+import org.sltpaya.comiclands.fragment.tab.VideoTabFragment;
 import java.util.ArrayList;
 
 /**

@@ -19,7 +19,7 @@ import java.util.List;
  * Author: SLTPAYA
  * Date: 2017/2/18
  */
-public class VideoAdapter extends RecyclerView.Adapter {
+public class VideoAdapter extends TabAdapter<VideoEntry> {
 
     private final LayoutInflater mInflater;
     private List<VideoEntry.Info> infos;
@@ -31,6 +31,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
         mInflater = LayoutInflater.from(context);
     }
 
+    @Override
     public void notifyDataChanged(VideoEntry entry) {
         infos = entry.getInfo();
         checkedData();

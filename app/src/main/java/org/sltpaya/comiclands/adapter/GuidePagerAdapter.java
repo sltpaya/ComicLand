@@ -55,8 +55,7 @@ public class GuidePagerAdapter extends PagerAdapter {
 
     private void initView() {
         mViews = new ArrayList<>();
-        LayoutInflater inflater
-                = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = LayoutInflater.from(mContext);
         for (int i = 0; i < resId.length; i++) {
             View view = inflater.inflate(R.layout.guide_pager_item, null);
             ImageView img = (ImageView) view.findViewById(R.id.guide_img);
