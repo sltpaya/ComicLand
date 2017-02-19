@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+   android:layout_marginBottom="10dp"
+    android:background="@drawable/book_list_stroke"
+    android:layout_width="106.6dp"
+    android:layout_height="140dp">
+
+    <TextView
+        android:id="@+id/classify_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center"
+        android:textSize="17sp"
+        android:textColor="#333333"
+        android:text="玄幻"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/classify_img"
+        android:scaleType="fitXY"
+        android:src="@drawable/loading_bookrack"
+        android:layout_width="match_parent"
+        android:layout_height="95dp" />
+
+</LinearLayout>

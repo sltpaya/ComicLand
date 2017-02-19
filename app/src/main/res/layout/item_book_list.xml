@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="190dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/book_list_stroke"
+    android:orientation="vertical"
+    android:padding="0.1dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/book_list_img"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loading_bookrack"/>
+
+        <TextView
+            android:id="@+id/book_list_count"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
+            android:drawableLeft="@drawable/star"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/star"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/book_list_title"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#000000" />
+
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/item_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/item_video_1"
+                layout="@layout/item_video" />
+
+            <include layout="@layout/item_divider" />
+
+            <include
+                android:id="@+id/item_video_2"
+                layout="@layout/item_video" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/item_video_3"
+                layout="@layout/item_video" />
+
+            <include layout="@layout/item_divider" />
+
+            <include
+                android:id="@+id/item_video_4"
+                layout="@layout/item_video" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/recycler_divider" />
+
+</LinearLayout>

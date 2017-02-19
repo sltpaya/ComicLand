@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">漫画DD</string>
+    <string name="splash_img">闪屏页封面</string>
+    <string name="splash_logo">闪屏页Logo</string>
+    <string name="bottom_behavior" translatable="false">org.sltpaya.comiclands.behavior.BottomBehavior</string>
+    <string name="search_button">搜索按钮</string>
+    <string name="edit_button">编辑按钮</string>
+    <string name="lastest_title">更新</string>
+    <string name="title_mine">我的</string>
+    <string name="scan_button">扫描按钮</string>
+    <string name="setting_button">设置按钮</string>
+</resources>

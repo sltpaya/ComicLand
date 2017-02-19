@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_layer"
+        android:paddingLeft="0.01dp"
+        android:paddingRight="0.01dp">
+
+        <ImageView
+            android:id="@+id/comicview_two_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loading_bookrack" />
+
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#000000"
+        android:id="@+id/comicview_two_title"
+        android:layout_width="match_parent"
+        android:layout_marginRight="@dimen/normal_padding"
+        android:layout_marginEnd="@dimen/normal_padding"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="斗破苍穹"
+        android:textSize="13sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include layout="@layout/mine_top" />
+
+    <View
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <include layout="@layout/mine_divider" />
+
+    <include android:id="@+id/mine_group_one_1"
+        layout="@layout/mine_group_one" />
+
+    <include android:id="@+id/mine_group_one_2"
+        layout="@layout/mine_group_one" />
+
+    <include android:id="@+id/mine_group_two_1"
+        layout="@layout/mine_group_two" />
+
+    <include layout="@layout/mine_divider" />
+
+    <include android:id="@+id/mine_group_two_2"
+        layout="@layout/mine_group_two" />
+
+    <include
+        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        layout="@layout/mine_divider" />
+
+
+</LinearLayout>

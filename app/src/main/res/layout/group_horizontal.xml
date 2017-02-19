@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <include
+        android:id="@+id/item_comicview_two_1"
+        layout="@layout/item_comicview_two" />
+
+    <include layout="@layout/item_divider" />
+
+    <include
+        android:id="@+id/item_comicview_two_2"
+        layout="@layout/item_comicview_two" />
+
+    <include layout="@layout/item_divider" />
+
+    <include
+        android:id="@+id/item_comicview_two_3"
+        layout="@layout/item_comicview_two" />
+
+</LinearLayout>

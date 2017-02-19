@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@drawable/bg_stroke"
+    android:orientation="vertical"
+    android:padding="0.1dp">
+
+    <ImageView
+        android:id="@+id/comicview_one_img"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/loading_bookrack" />
+
+    <TextView
+        android:id="@+id/comicview_one_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comicview_one_img"
+        android:layout_marginEnd="@dimen/normal_padding"
+        android:layout_marginLeft="@dimen/normal_padding"
+        android:layout_marginRight="@dimen/normal_padding"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:layout_marginTop="@dimen/normal_padding"
+        android:ellipsize="end"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:text="绝世唐门"
+        android:textColor="#000000"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comicview_one_title"
+        android:layout_marginLeft="@dimen/normal_padding"
+        android:layout_marginRight="@dimen/normal_padding"
+        android:layout_marginStart="@dimen/normal_padding"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/item_margin">
+
+        <TextView
+            android:id="@+id/comicview_one_des"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="更新至第83话哈哈"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bookshelf_hot" />
+
+        <TextView
+            android:id="@+id/comicview_one_viewcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.79亿"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+

@@ -1,0 +1,48 @@
+package org.sltpaya.comiclands.adapter;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import org.sltpaya.comiclands.R;
+import org.sltpaya.comiclands.holder.FragmentRecyclerHolder;
+
+/**
+ * Author: SLTPAYA
+ * Date: 2017/2/11
+ */
+public class FragmentRecyclerAdapter extends RecyclerView.Adapter{
+
+//    private Context mContext;
+    private LayoutInflater mInflater;
+
+    public FragmentRecyclerAdapter(Context mContext) {
+//        this.mContext = mContext;
+        this.mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View inflate = mInflater.inflate(R.layout.recycler_item, parent, false);
+        FragmentRecyclerHolder holder = new FragmentRecyclerHolder(inflate);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 50;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+}

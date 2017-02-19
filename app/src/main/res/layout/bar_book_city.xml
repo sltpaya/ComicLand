@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CollapsingToolbarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_scrollFlags="scroll|enterAlways">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height">
+
+        <android.support.design.widget.TabLayout
+            app:tabBackground="@null"
+            android:id="@+id/top_navigation"
+            android:background="@color/white"
+            app:tabIndicatorColor="@android:color/holo_red_light"
+            app:tabIndicatorHeight="2dp"
+            app:tabTextColor="#000000"
+            app:tabSelectedTextColor="@android:color/holo_red_light"
+            android:layout_width="280dp"
+            android:layout_height="match_parent">
+
+        </android.support.design.widget.TabLayout>
+
+        <FrameLayout
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/search_shelf"
+            android:clickable="true"
+            android:layout_width="@dimen/bar_button_width"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:contentDescription="@string/search_button"
+                android:layout_gravity="center"
+                android:src="@drawable/search_shelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CollapsingToolbarLayout>

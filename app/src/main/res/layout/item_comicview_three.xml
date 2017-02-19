@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/comicview_three_img"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loading_bookrack" />
+
+        <ImageView
+            android:id="@+id/comicview_three_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_top_flag_1" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/comicview_three_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="斗破苍穹"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/comicview_three_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="国漫，玄幻分类"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bookshelf_hot" />
+
+            <TextView
+                android:id="@+id/comicview_three_viewcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:text="6.17亿"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@drawable/book_list_stroke"
+    android:orientation="vertical"
+    android:padding="0.1dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/video_img"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loading_bookrack" />
+
+        <View
+            android:background="@drawable/video_gradient"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/video_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:drawableLeft="@drawable/video_icon"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/video_icon"
+            android:text="1.78人观看"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/video_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="6dp"
+        android:text="水果篮子"
+        android:textColor="#000000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/video_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:text="江湖菜适合带积极防静电飞机的覅就"
+        android:textSize="12sp" />
+
+</LinearLayout>
+
+
+

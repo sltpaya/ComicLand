@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/rank_list_img"
+            android:src="@drawable/loading_bookrack"
+            android:layout_width="140dp"
+            android:layout_height="85dp" />
+
+        <LinearLayout
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/rank_list_img"
+            android:layout_toRightOf="@id/rank_list_img"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:textSize="16sp"
+                android:id="@+id/rank_list_title"
+                android:textColor="#000000"
+                android:text="一周热门排行"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="14dp"
+                android:textSize="14sp"
+                android:id="@+id/rank_list_des"
+                android:maxLines="2"
+                android:text="每天哈哈哈哈啊哈哈啊哈哈合法化红发红哈哈哈哈哈哈哈哈哈"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:background="#44c3c3c3"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"/>
+
+</LinearLayout>
