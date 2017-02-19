@@ -26,13 +26,15 @@ public class ComicVerticalHolder extends BaseHolder<RecommendEntry.Comicslist> {
 
     protected void initHolderView() {
         mItems = new ArrayList<>();
-        System.out.println("重走了该方法了！！");
-        View mItem_one = itemView.findViewById(R.id.item_comicview_two_1);
-        View mItem_two = itemView.findViewById(R.id.item_comicview_two_2);
-        View mItem_three = itemView.findViewById(R.id.item_comicview_two_3);
-        mItems.add(mItem_one);
-        mItems.add(mItem_two);
-        mItems.add(mItem_three);
+        int[] layoutIds = {
+                R.id.item_comicview_two_1,
+                R.id.item_comicview_two_2,
+                R.id.item_comicview_two_3
+        };
+        for (int id : layoutIds) {
+            View tmpView = itemView.findViewById(id);
+            mItems.add(tmpView);
+        }
     }
 
     @Override

@@ -16,26 +16,27 @@ import java.util.regex.Pattern;
  * Author: SLTPAYA
  * Date: 2017/2/14
  */
-public class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
+class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
 
     private ArrayList<View> mItems;
 
-    public ComicHorizontalHolder(View itemView) {
+    ComicHorizontalHolder(View itemView) {
         super(itemView);
         initHolderView();
     }
 
     protected void initHolderView() {
         mItems = new ArrayList<>();
-        //从布局文件中重复的获取，优化办法，通过代码重复填充成新布局
-        View mItem_one = itemView.findViewById(R.id.item_comicview_one_1);
-        View mItem_two = itemView.findViewById(R.id.item_comicview_one_2);
-        View mItem_three = itemView.findViewById(R.id.item_comicview_one_3);
-        View mItem_four = itemView.findViewById(R.id.item_comicview_one_4);
-        mItems.add(mItem_one);
-        mItems.add(mItem_two);
-        mItems.add(mItem_three);
-        mItems.add(mItem_four);
+        int[] layoutIds = {
+                R.id.item_comicview_one_1,
+                R.id.item_comicview_one_2,
+                R.id.item_comicview_one_3,
+                R.id.item_comicview_one_4
+        };
+        for (int id : layoutIds) {
+            View tmpView = itemView.findViewById(id);
+            mItems.add(tmpView);
+        }
     }
 
 

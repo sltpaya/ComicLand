@@ -1,7 +1,6 @@
 package org.sltpaya.comiclands.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,13 +10,10 @@ import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.holder.recommend.AdViewHolder;
 import org.sltpaya.comiclands.holder.recommend.BannerHolder;
 import org.sltpaya.comiclands.holder.recommend.BaseHolder;
-import org.sltpaya.comiclands.holder.recommend.ComicHorizontalHolder;
 import org.sltpaya.comiclands.holder.recommend.ComicVerticalHolder;
 import org.sltpaya.comiclands.holder.recommend.PreviewHolder;
 import org.sltpaya.comiclands.holder.recommend.VideoViewHolder;
 import org.sltpaya.comiclands.net.entry.RecommendEntry;
-
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -27,15 +23,13 @@ import java.util.List;
 public class RecommendAdapter extends RecyclerView.Adapter<BaseHolder> {
 
     private final String TAG = "RecommendAdapter";
-    private boolean DEBUG = true;
-
     private final int COMIC_TYPE_FIRST = 1;
     private final int COMIC_TYPE_SECONDE = 2;
     private final int COMIC_TYPE_ONE = 3;
     private final int COMIC_TYPE_TWO = 4;
     private final int AD_VIEW = 5;
     private final int VIDEO_VIEW = 6;
-
+    private boolean DEBUG = true;
     private LayoutInflater mInflater;
     private List<RecommendEntry.Info> info;
 
@@ -45,6 +39,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<BaseHolder> {
 
     /**
      * 通知数据改变
+     *
      * @param entry RecommendEntry
      */
     public void notifyDataChanged(RecommendEntry entry) {

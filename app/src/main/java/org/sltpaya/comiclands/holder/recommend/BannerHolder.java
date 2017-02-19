@@ -9,11 +9,10 @@ import android.widget.RelativeLayout;
 
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.adapter.BannerPagerAdapter;
+import org.sltpaya.comiclands.consts.Consts;
 import org.sltpaya.comiclands.net.BannerHttp;
 import org.sltpaya.comiclands.net.BannerListener;
 import org.sltpaya.comiclands.net.BannerObserver;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
 import org.sltpaya.comiclands.net.entry.BannerEntry;
 import org.sltpaya.comiclands.net.entry.RecommendEntry;
 import org.sltpaya.tool.Utils;
@@ -21,8 +20,6 @@ import org.sltpaya.tool.Utils;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import retrofit2.Call;
 
 /**
  * Author: SLTPAYA
@@ -33,32 +30,30 @@ public class BannerHolder extends ComicHorizontalHolder {
     private ViewPager mBanner;
     private View selectedDot;
     private ViewGroup dotSet;
+
     private int dotWidth;
     private int dotRightMargin;
     private int pagerCount;
-    private int pagerStartIndex;//设置Banner最开始的索引值
+    private int pagerStartIndex;         //设置Banner最开始的索引值
     private boolean mBannerFlag = false;//设置布局Banner的显隐
 
     public BannerHolder(View itemView, boolean bannerFlag) {
         super(itemView);
-        BannerHttp http = new BannerHttp(9);
-        http.requestBannerJson();
-//        BannerHttp.requestBannerJson(9);/*推荐-轮播图groupId = 9*/
+        requestBannerJson();
         mBannerFlag = bannerFlag;
         initHolderView();
+    }
+
+    private void requestBannerJson() {
+        BannerHttp http = new BannerHttp(Consts.RECOMMEND_ID);
+        http.requestBannerJson();
     }
 
     @Override
     protected void initHolderView() {
         View bannerLayout = itemView.findViewById(R.id.banner_layout);
         if (mBannerFlag) {
-            Log.d("BannerHolder", "Banner初始化了！");
-            mBanner = (ViewPager) itemView.findViewById(R.id.recommend_banner);
-            bannerLayout.setVisibility(View.VISIBLE);
-            selectedDot = itemView.findViewById(R.id.banner_select_dot);
-            dotSet = (ViewGroup) itemView.findViewById(R.id.point_set);
-            selectedDot.setVisibility(View.GONE);
-            bindBannerEvent();
+            initBanner(bannerLayout);
         } else {
             Log.d("BannerHolder", "橫向布局初始化了！");
             bannerLayout.setVisibility(View.GONE);
@@ -68,35 +63,59 @@ public class BannerHolder extends ComicHorizontalHolder {
 
     @Override
     public void setData(RecommendEntry.Info entry) {
-        super.setData(entry);
         if (mBannerFlag) {
-            /*成功获取到网络数据后，为Banner设置数据适配器，创建固定指示点*/
-            BannerObserver observer = BannerHttp.getBannerObserver();
-            observer.registerNetObserver(new BannerListener() {
-                @Override
-                public void onResponseSuccessed(BannerEntry entry, int groupId) {
-                    pagerCount = entry.getInfo().getAdlistjson().size();
-                    pagerStartIndex = 10000 * pagerCount;
-                    setBannerData(entry);
-                    createDotView();
-                }
-
-                @Override
-                public void onFailed(int groupId) {
-
-                }
-            }, 9);
-
+            processNetData();
         }
+        super.setData(entry);
     }
 
     /**
-     * 设置Banner数据，为其设置适配器
+     * 初始化Banner相关View
      *
-     * @param entry BannerEntry
+     * @param bannerLayout BannerLayout
+     */
+    private void initBanner(View bannerLayout) {
+        Log.d("BannerHolder", "Banner初始化了！");
+        mBanner = (ViewPager) itemView.findViewById(R.id.recommend_banner);
+        bannerLayout.setVisibility(View.VISIBLE);
+        selectedDot = itemView.findViewById(R.id.banner_select_dot);
+        dotSet = (ViewGroup) itemView.findViewById(R.id.point_set);
+        selectedDot.setVisibility(View.GONE);
+        bindBannerEvent();
+    }
+
+    /**
+     * 获取Banner Json网络回调数据
+     * @see #requestBannerJson()
+     * {@link Consts}
+     * {@link BannerHttp}
+     */
+    private void processNetData() {
+        /*成功获取到网络数据后，为Banner设置数据适配器，创建固定指示点*/
+        BannerObserver observer = BannerHttp.getBannerObserver();
+        observer.registerNetObserver(new BannerListener() {
+            @Override
+            public void onResponseSuccessed(BannerEntry entry, int groupId) {
+                setBannerData(entry);
+                createDotView();
+            }
+
+            @Override
+            public void onFailed(int groupId) {
+            }
+        }, Consts.RECOMMEND_ID);
+    }
+
+    /**
+     * <p>获取到Entry后设置Banner数据，为其设置适配器</p>
+     * <p>获取Banner需要展示的总数量{@link #pagerCount}，
+     * 设置StartIndex{@link #pagerStartIndex}</p>
+     * @param entry {@link BannerEntry}
      */
     private void setBannerData(BannerEntry entry) {
         if (entry.getCode() == 200) {
+            pagerCount = entry.getInfo().getAdlistjson().size();
+            pagerStartIndex = 10000 * pagerCount;
             List<BannerEntry.Adlistjson> list = entry.getInfo().getAdlistjson();
             mBanner.setAdapter(new BannerPagerAdapter(list));
             mBanner.setCurrentItem(pagerStartIndex, false);
@@ -105,7 +124,7 @@ public class BannerHolder extends ComicHorizontalHolder {
     }
 
     /**
-     * 创建所有固定点
+     * 创建Banner下方所有固定小白点
      */
     private void createDotView() {
         for (int i = 0; i < pagerCount; i++) {
@@ -121,7 +140,9 @@ public class BannerHolder extends ComicHorizontalHolder {
     }
 
     /**
-     * 为Banner绑定事件监听，在其中处理指示点的移动
+     * 为Banner绑定事件监听，在其中处理选中指示点的移动
+     * <p>原理为根据{@link ViewPager}滑动的百分值，动态设置选中点的Margin值</p>
+     * @see #mBanner
      */
     private void bindBannerEvent() {
         mBanner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
