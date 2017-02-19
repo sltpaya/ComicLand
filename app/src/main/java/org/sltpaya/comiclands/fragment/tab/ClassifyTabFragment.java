@@ -2,10 +2,10 @@ package org.sltpaya.comiclands.fragment.tab;
 
 import android.support.v7.widget.GridLayoutManager;
 
-import org.sltpaya.comiclands.adapter.ClassifyAdapter;
+import org.sltpaya.comiclands.adapter.tab.ClassifyAdapter;
 import org.sltpaya.comiclands.net.ClassifyHttp;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
+import org.sltpaya.comiclands.observer.NetListener;
+import org.sltpaya.comiclands.observer.NetObserver;
 import org.sltpaya.comiclands.net.entry.ClassifyEntry;
 import org.sltpaya.tool.Toast;
 import org.sltpaya.tool.Utils;

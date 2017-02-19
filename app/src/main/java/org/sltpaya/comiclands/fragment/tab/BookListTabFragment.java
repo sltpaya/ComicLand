@@ -2,10 +2,10 @@ package org.sltpaya.comiclands.fragment.tab;
 
 import android.support.v7.widget.GridLayoutManager;
 
-import org.sltpaya.comiclands.adapter.BookListAdapter;
+import org.sltpaya.comiclands.adapter.tab.BookListAdapter;
 import org.sltpaya.comiclands.net.BookListHttp;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
+import org.sltpaya.comiclands.observer.NetListener;
+import org.sltpaya.comiclands.observer.NetObserver;
 import org.sltpaya.comiclands.net.entry.BookListEntry;
 import org.sltpaya.tool.Toast;
 import org.sltpaya.tool.Utils;

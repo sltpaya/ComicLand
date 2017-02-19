@@ -8,23 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.squareup.picasso.Picasso;
-
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.activity.MainActivity;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
+import org.sltpaya.comiclands.observer.NetListener;
+import org.sltpaya.comiclands.observer.NetObserver;
 import org.sltpaya.comiclands.net.SplashHttp;
 import org.sltpaya.comiclands.net.entry.SplashEntry;
 import org.sltpaya.tool.Utils;
-
 import java.util.Timer;
 import java.util.TimerTask;
-
 import retrofit2.Call;
-
-import static java.lang.System.load;
 
 /**
  * Author: SLTPAYA
@@ -66,7 +60,7 @@ public class SplashFragment extends Fragment {
                 if (entry.getCode() == 200) {
                     String imgUrl = entry.getInfo().getAdlistjson().get(0).getImageurl();
                     //TODO:有异常出现：Context must not be null.
-                   Picasso.with(Utils.getContext()).load(imgUrl).into(mImg);
+                    Picasso.with(Utils.getContext()).load(imgUrl).into(mImg);
                 }
             }
 

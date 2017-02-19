@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 
 import org.sltpaya.comiclands.net.entry.BannerEntry;
-import org.sltpaya.comiclands.net.entry.SplashEntry;
+import org.sltpaya.comiclands.observer.BannerObserver;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,7 +16,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
 import static org.sltpaya.comiclands.consts.Consts.BASE_URL;
@@ -95,10 +94,6 @@ public class BannerHttp {
         typeMap.put("appType", "6");
         typeMap.put("maxtargetmethod", "99");
         typeMap.put("platformtype", "1");
-
-//        typeMap.put("e", "1486713089");
-//        typeMap.put("token", "7c9f13ab12e8ce9d52f9992819b9e80d");
-//        typeMap.put("viewtype", "1");
         return typeMap;
     }
 

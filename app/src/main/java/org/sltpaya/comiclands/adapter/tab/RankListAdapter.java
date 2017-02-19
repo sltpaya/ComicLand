@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.adapter;
+package org.sltpaya.comiclands.adapter.tab;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.consts.Consts;
 import org.sltpaya.comiclands.holder.BannerHolder;
-import org.sltpaya.comiclands.holder.ranklist.RankListHolder;
+import org.sltpaya.comiclands.holder.RankListHolder;
 import org.sltpaya.comiclands.net.entry.RankListEntry;
 
 import java.util.List;

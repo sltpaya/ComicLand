@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.sltpaya.comiclands.R;
-import org.sltpaya.comiclands.adapter.TabAdapter;
+import org.sltpaya.comiclands.adapter.tab.TabAdapter;
 
 /**
  * Author: SLTPAYA

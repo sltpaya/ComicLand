@@ -3,14 +3,12 @@ package org.sltpaya.comiclands.net;
 import android.util.Log;
 
 import org.sltpaya.comiclands.net.entry.RecommendEntry;
+import org.sltpaya.comiclands.observer.NetObserver;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import okhttp3.OkHttpClient;
-import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;

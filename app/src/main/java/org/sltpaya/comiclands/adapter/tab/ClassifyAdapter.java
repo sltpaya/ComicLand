@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.adapter;
+package org.sltpaya.comiclands.adapter.tab;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,8 +11,6 @@ import org.sltpaya.comiclands.holder.ClassifyHolder;
 import org.sltpaya.comiclands.net.entry.ClassifyEntry;
 
 import java.util.List;
-
-import static android.R.string.no;
 
 /**
  * Author: SLTPAYA

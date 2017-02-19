@@ -3,6 +3,7 @@ package org.sltpaya.comiclands.net;
 import android.util.Log;
 
 import org.sltpaya.comiclands.net.entry.BookListEntry;
+import org.sltpaya.comiclands.observer.NetObserver;
 
 import java.util.HashMap;
 import java.util.Map;

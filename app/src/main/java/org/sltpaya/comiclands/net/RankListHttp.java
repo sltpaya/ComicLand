@@ -2,6 +2,8 @@ package org.sltpaya.comiclands.net;
 
 import android.util.Log;
 import org.sltpaya.comiclands.net.entry.RankListEntry;
+import org.sltpaya.comiclands.observer.NetObserver;
+
 import java.util.HashMap;
 import java.util.Map;
 import okhttp3.OkHttpClient;

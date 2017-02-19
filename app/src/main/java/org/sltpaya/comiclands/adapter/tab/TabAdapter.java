@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.adapter;
+package org.sltpaya.comiclands.adapter.tab;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;

@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.holder.booklist;
+package org.sltpaya.comiclands.holder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

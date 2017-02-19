@@ -4,9 +4,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import org.sltpaya.comiclands.R;
-import org.sltpaya.comiclands.adapter.VideoAdapter;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
+import org.sltpaya.comiclands.adapter.tab.VideoAdapter;
+import org.sltpaya.comiclands.observer.NetListener;
+import org.sltpaya.comiclands.observer.NetObserver;
 import org.sltpaya.comiclands.net.VideoHttp;
 import org.sltpaya.comiclands.net.entry.VideoEntry;
 import org.sltpaya.tool.Toast;

@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.adapter;
+package org.sltpaya.comiclands.adapter.tab;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import org.sltpaya.comiclands.R;
-import org.sltpaya.comiclands.holder.booklist.BookListHolder;
+import org.sltpaya.comiclands.holder.BookListHolder;
 import org.sltpaya.comiclands.net.entry.BookListEntry;
 
 import java.util.List;

@@ -5,9 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import org.sltpaya.comiclands.R;
-import org.sltpaya.comiclands.adapter.RankListAdapter;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
+import org.sltpaya.comiclands.adapter.tab.RankListAdapter;
+import org.sltpaya.comiclands.observer.NetListener;
+import org.sltpaya.comiclands.observer.NetObserver;
 import org.sltpaya.comiclands.net.RankListHttp;
 import org.sltpaya.comiclands.net.entry.RankListEntry;
 import org.sltpaya.tool.Toast;

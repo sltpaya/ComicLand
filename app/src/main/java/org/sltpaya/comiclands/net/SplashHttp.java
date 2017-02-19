@@ -3,6 +3,8 @@ package org.sltpaya.comiclands.net;
 import android.util.Log;
 import com.google.gson.Gson;
 import org.sltpaya.comiclands.net.entry.SplashEntry;
+import org.sltpaya.comiclands.observer.NetObserver;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

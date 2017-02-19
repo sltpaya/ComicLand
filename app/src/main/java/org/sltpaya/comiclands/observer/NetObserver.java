@@ -1,4 +1,4 @@
-package org.sltpaya.comiclands.net;
+package org.sltpaya.comiclands.observer;
 
 import java.util.ArrayList;
 
