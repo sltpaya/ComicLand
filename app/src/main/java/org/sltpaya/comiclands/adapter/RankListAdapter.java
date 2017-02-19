@@ -6,18 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import org.sltpaya.comiclands.R;
-import org.sltpaya.comiclands.holder.ranklist.BannerHolder;
+import org.sltpaya.comiclands.consts.Consts;
+import org.sltpaya.comiclands.holder.BannerHolder;
 import org.sltpaya.comiclands.holder.ranklist.RankListHolder;
-import org.sltpaya.comiclands.net.BannerHttp;
-import org.sltpaya.comiclands.net.NetListener;
-import org.sltpaya.comiclands.net.NetObserver;
-import org.sltpaya.comiclands.net.entry.BannerEntry;
 import org.sltpaya.comiclands.net.entry.RankListEntry;
-import org.sltpaya.comiclands.net.entry.RecommendEntry;
 
 import java.util.List;
-
-import retrofit2.Call;
 
 /**
  * Author: SLTPAYA
@@ -50,7 +44,7 @@ public class RankListAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         if (viewType == BANNER_TYPE) {
-            view = mInflater.inflate(R.layout.banner_layout, parent, false);
+            view = mInflater.inflate(R.layout.item_banner, parent, false);
             return new BannerHolder(view);
         }
         if (viewType == NORMAL_TYPE) {
@@ -62,13 +56,10 @@ public class RankListAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof BannerHolder) {
-            System.out.println("设置中！");
-            ((BannerHolder)holder).setData(BannerHolder.RANK_LIST_ID);
-            return;
-        }
-        if (holder instanceof RankListHolder) {
-            ((RankListHolder)holder).setData(special.get(position-1));
+        if (getItemViewType(position) == BANNER_TYPE) {
+            ((BannerHolder)holder).setBannerData(true, Consts.RANK_LIST_ID);
+        }else {
+            ((RankListHolder)holder).setData(special.get(position - 1));
         }
     }
 
@@ -84,6 +75,5 @@ public class RankListAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return special == null ? 0 : special.size() + 1;
     }
-
 
 }

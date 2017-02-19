@@ -5,8 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include android:id="@+id/banner_layout"
-        layout="@layout/banner_layout" />
+    <include layout="@layout/item_banner"/>
 
     <include layout="@layout/group_type_one" />
 

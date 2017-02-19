@@ -7,9 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import org.sltpaya.comiclands.R;
+import org.sltpaya.comiclands.consts.Consts;
 import org.sltpaya.comiclands.holder.recommend.AdViewHolder;
-import org.sltpaya.comiclands.holder.recommend.BannerHolder;
 import org.sltpaya.comiclands.holder.recommend.BaseHolder;
+import org.sltpaya.comiclands.holder.recommend.ComicHorizontalHolder;
 import org.sltpaya.comiclands.holder.recommend.ComicVerticalHolder;
 import org.sltpaya.comiclands.holder.recommend.PreviewHolder;
 import org.sltpaya.comiclands.holder.recommend.VideoViewHolder;
@@ -20,16 +21,18 @@ import java.util.List;
  * Author: SLTPAYA
  * Date: 2017/2/13
  */
-public class RecommendAdapter extends RecyclerView.Adapter<BaseHolder> {
+public class RecommendAdapter extends RecyclerView.Adapter {
 
     private final String TAG = "RecommendAdapter";
+    private boolean DEBUG = true;
+
     private final int COMIC_TYPE_FIRST = 1;
     private final int COMIC_TYPE_SECONDE = 2;
     private final int COMIC_TYPE_ONE = 3;
     private final int COMIC_TYPE_TWO = 4;
     private final int AD_VIEW = 5;
     private final int VIDEO_VIEW = 6;
-    private boolean DEBUG = true;
+
     private LayoutInflater mInflater;
     private List<RecommendEntry.Info> info;
 
@@ -50,23 +53,17 @@ public class RecommendAdapter extends RecyclerView.Adapter<BaseHolder> {
     }
 
     @Override
-    public BaseHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         BaseHolder holder = null;
         View inflate;
         switch (viewType) {
+            case COMIC_TYPE_ONE:
             case COMIC_TYPE_FIRST:
                 inflate = mInflater.inflate(R.layout.recommend_type_banner, parent, false);
-                holder = new BannerHolder(inflate, true);
-                break;
+                return new ComicHorizontalHolder(inflate);
             case COMIC_TYPE_SECONDE:
                 inflate = mInflater.inflate(R.layout.recommend_type_second, parent, false);
                 holder = new PreviewHolder(inflate);
-                break;
-            case COMIC_TYPE_ONE:
-//                inflate = mInflater.inflate(R.layout.group_type_one, parent, false);
-//                holder = new ComicHorizontalHolder(inflate);
-                inflate = mInflater.inflate(R.layout.recommend_type_banner, parent, false);
-                holder = new BannerHolder(inflate, false);
                 break;
             case COMIC_TYPE_TWO:
                 inflate = mInflater.inflate(R.layout.group_type_two, parent, false);
@@ -85,9 +82,19 @@ public class RecommendAdapter extends RecyclerView.Adapter<BaseHolder> {
     }
 
     @Override
-    public void onBindViewHolder(BaseHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder != null && info != null) {
-            holder.setData(info.get(position));
+            if (holder instanceof BaseHolder) {
+                ((BaseHolder)holder).setData(info.get(position));
+            }
+            if (holder instanceof ComicHorizontalHolder) {
+                if (getItemViewType(position) == COMIC_TYPE_ONE) {
+                    ((ComicHorizontalHolder)holder).setData(false, 0,info.get(position));
+                }else {
+                    ((ComicHorizontalHolder)holder)
+                            .setData(true, Consts.RECOMMEND_ID,info.get(position));
+                }
+            }
         }
     }
 

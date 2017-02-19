@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.sltpaya.comiclands.R;
 import org.sltpaya.comiclands.holder.booklist.BookListHolder;
-import org.sltpaya.comiclands.holder.ranklist.BannerHolder;
-import org.sltpaya.comiclands.net.entry.BannerEntry;
 import org.sltpaya.comiclands.net.entry.BookListEntry;
 
 import java.util.List;
@@ -58,7 +56,7 @@ public class BookListAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 //        if (holder instanceof BannerHolder) {
-//            ((BannerHolder)holder).setData(BannerHolder.BOOK_LIST_ID);
+//            ((BannerHolder)holder).setBannerData(BannerHolder.BOOK_LIST_ID);
 //            return;
 //        }
         if (holder instanceof BookListHolder) {

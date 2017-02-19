@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import org.sltpaya.comiclands.R;
+import org.sltpaya.comiclands.holder.*;
 import org.sltpaya.comiclands.net.entry.RecommendEntry;
 import org.sltpaya.tool.Toast;
 
@@ -16,15 +17,30 @@ import java.util.regex.Pattern;
  * Author: SLTPAYA
  * Date: 2017/2/14
  */
-class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
+public class ComicHorizontalHolder extends org.sltpaya.comiclands.holder.BannerHolder {
 
     private ArrayList<View> mItems;
+    private TextView mColumnTitle;
+    private ImageView mColumnIcon;
 
-    ComicHorizontalHolder(View itemView) {
+    public ComicHorizontalHolder(View itemView) {
         super(itemView);
-        initHolderView();
+        initTitleView();
     }
 
+    private void initTitleView() {
+        mColumnTitle = (TextView) itemView.findViewById(R.id.item_title_text);
+        mColumnIcon = (ImageView) itemView.findViewById(R.id.item_title_img);
+        View columnMore = itemView.findViewById(R.id.item_title_more);
+        columnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(itemView.getContext(), "将会加载更多哦！", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
     protected void initHolderView() {
         mItems = new ArrayList<>();
         int[] layoutIds = {
@@ -39,9 +55,8 @@ class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
         }
     }
 
-
-    @Override
-    public void setData(RecommendEntry.Info infoEntry) {
+    public void setData(boolean bannerFlag, int groupId,RecommendEntry.Info infoEntry) {
+        super.setBannerData(bannerFlag, groupId);
         String iconUrl = infoEntry.getIcon();
         String titleName = infoEntry.getName();
         mColumnTitle.setText(titleName);
@@ -54,8 +69,7 @@ class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
         }
     }
 
-    @Override
-    public void processData(final View view, RecommendEntry.Comicslist comic) {
+    private void processData(final View view, RecommendEntry.Comicslist comic) {
         ImageView imgDes = (ImageView) view.findViewById(R.id.comicview_one_img);
         TextView comicTitle = (TextView) view.findViewById(R.id.comicview_one_title);
         TextView comicDes = (TextView) view.findViewById(R.id.comicview_one_des);
@@ -99,6 +113,30 @@ class ComicHorizontalHolder extends BaseHolder<RecommendEntry.Comicslist> {
             }
         }
         return extensionUrl;
+    }
+
+    /**
+     * 格式化观看人数
+     */
+    private String formatViewCount(int count) {
+        int length = 0;
+        int tmp = count;
+        while (tmp > 0) {
+            tmp = tmp / 10;
+            length++;
+        }
+        if (length > 8) {
+            double oFloat = ((count / 10000000) / 10.0);
+            System.out.println(oFloat);
+            return oFloat + "亿";
+        } else if (length > 4) {
+            double oFloat = ((count / 1000) / 10.0);
+            return oFloat + "万";
+        } else if (length > 3) {
+            double oFloat = ((count / 100) / 10.0);
+            return oFloat + "千";
+        }
+        return null;
     }
 
 }
